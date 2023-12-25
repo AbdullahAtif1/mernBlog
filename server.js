@@ -2,6 +2,9 @@ const express = require("express")
 const app = express()
 app.set("view engine", "ejs")
 
+const mongoose = require("mongoose")
+mongoose.connect('mongodb://localhost/mernblog')
+
 const articleRouter = require('./routes/articles')
 app.use('/articles', articleRouter)
 
