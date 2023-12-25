@@ -1,0 +1,42 @@
+
+<%- include('../base.ejs') %>
+
+	<h1 class="text-3xl text-teal-500 m-5 p-5 font-bold underline">
+		Add a new article
+	</h1>
+
+	<div class="flex justify-center">
+		<div class="min-w-max border border-teal-400 rounded-lg shadow-xl m-2">
+			<div class="p-5">
+					<h3 class="mb-2 text-2xl font-bold tracking-tight text-teal-300">Let Your Imagination Run Wild!</h3>
+						
+						<form class="max-w-md mx-auto mt-10" method="post" action="">
+							
+							<%- include ('article_form_fields') %>
+							<div class="flex justify-center">
+								<button type="submit" class="relative mt-3 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none">
+									<span class="relative px-32 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+										Submit
+									</span>
+								</button>
+							</div>
+
+						</form>
+
+						<div class="flex justify-center">
+							<a href="/">
+								<button class="relative mt-3 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-500 to-red-500 group-hover:from-teal-500 group-hover:to-red-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none">
+									<span class="relative px-32 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+										Cancel
+									</span>
+								</button>
+							</a>
+						</div>
+
+						
+			</div>
+		</div>
+	</div>
+
+	
+

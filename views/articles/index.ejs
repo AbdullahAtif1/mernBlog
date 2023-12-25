@@ -1,0 +1,38 @@
+
+<%- include('../base.ejs') %>
+
+	<div class="flex items-center">
+    <h1 class="text-3xl text-teal-500 m-5 p-5 font-bold underline">
+        All Posts
+    </h1>
+		<a href="/articles/new">
+			<button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none">
+				<span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+				Add new
+				</span>
+			</button>
+		</a>
+	</div>
+
+	<!-- Your EJS file -->
+	<div class="flex justify-center mx-2">
+		<% articles.forEach(article => { %>
+			<div class="max-w-sm border border-teal-500 rounded-lg shadow-xl m-2">
+				<div class="p-5">
+					<a href="">
+						<h3 class="mb-2 text-2xl font-bold tracking-tight text-teal-500"><%= article.title %></h3>
+					</a>
+					<h4 class="mb-1 text-gray-500"><%= article.date.toLocaleDateString() %></h4>
+					<p class=" font-normal text-gray-300"><%= article.desc %></p>
+					<a href="">
+						<button class="relative mt-5 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none">
+							<span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+							Read More
+							</span>
+						</button>
+					</a>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+
