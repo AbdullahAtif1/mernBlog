@@ -3,26 +3,27 @@ const router = express.Router()
 const articelModel = require('../models/article')
 
 router.get('/new', (req, res) => {
-	res.render('articles/newArticle.ejs')
+	res.render('articles/newArticle', { article: new articelModel() })
 })
 
-router.get(("/:id", (req, res) => {
-	
-}))
+router.get("/:id", (req, res) => {
+	res.send(req.params.id)
+})
 
 router.post('/', async (req, res, next) => {
-	console.log(req.body)
-	const newArticle = new articelModel({
+	let article = new articelModel({
 		title: req.body.name,
 		desc: req.body.desc,
 		author: req.body.author
 	})
-	// next();
+
 	try {
-		article = await newArticle.save()
+		article = await article.save()
+		console.log(article)
 		res.redirect(`/articles/${article.id}`)
 	} catch (error) {
-
+		console.log(`Error: ${error}!`)
+		res.render('articles/newArticle', { article: article }) // Update
 	}
 })
 
